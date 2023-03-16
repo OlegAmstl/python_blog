@@ -1,5 +1,9 @@
 venv/
+htmlcov/
 .idea/
+.vscode/
 .pytest_cache/
 .env
+.coverage
 db.sqlite3
+__pycache__
