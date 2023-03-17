@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
+{% block title %}Splat{% endblock %}
 {% block content %}
-
+    {% include 'blog/components/splash.html' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-8">A</div>
+            <div class="d-none d-lg-block col-4">B</div>
+        </div>
+    </div>
 
 {% endblock %}
