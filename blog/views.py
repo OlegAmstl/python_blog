@@ -10,5 +10,13 @@ class HomeView(ListView):
     """
 
     model = Post
-    template_name = 'blog/index.html'
     context_object_name = 'posts'
+    paginate_by = 10
+
+    def get_template_names(self):
+        """
+        Добавление по 10 постов по мере прокрутке скрола вниз.
+        """
+        if self.request.htmx:
+            return 'blog/components/post-list-element.html'
+        return 'blog/index.html'
