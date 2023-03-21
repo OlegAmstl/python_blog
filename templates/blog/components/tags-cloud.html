@@ -1,0 +1,14 @@
+<div class="mb-4">
+    <div class="border-bottom">
+        <h4 class="pb-4 fw-bold fs-14">ВЫБЕРИ, ЧТО ТЕБЕ ИНТЕРЕСНО</h4>
+        <div class="pb-4">
+            {% for tag in tags %}
+            <span class="border border-dark p-1 px-3 mb-2 me-1 rounded-pill" style="display:inline-block">
+                <a href="#" class="fs-15 fw-500 text-decoration-none text-dark">
+                    {{ tag.name }}
+                </a>
+            </span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
