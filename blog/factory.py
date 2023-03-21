@@ -5,8 +5,8 @@ from factory.faker import faker
 
 from .models import Post
 
-
 FAKE = faker.Faker()
+
 
 class PostFactory(factory.django.DjangoModelFactory):
     class Meta:
@@ -29,6 +29,7 @@ class PostFactory(factory.django.DjangoModelFactory):
     def tags(self, create, extracted, **kwargs):
         if not create:
             return
+
         if extracted:
             self.tags.add(extracted)
         else:
