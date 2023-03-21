@@ -1,0 +1,21 @@
+{% extends 'blog/3-col-template.html' %}
+{% block content-left %}
+{% include '../includes/secondary-navbar.html' %}
+{% endblock %}
+{% block content-mid %}
+<style>
+    .blogger h1 {
+        letter-spacing: -0.6px;
+    }
+</style>
+<div class="blogger center mx-auto" style="max-width: 683px;">
+    <div class="text-muted">{{ post.author }}</div>
+    <div class="text-muted">{{ post.updated_at }}</div>
+    <h1 class="fw-bold pb-2">{{ post.title }}</h1>
+    <h3 class="text-muted fs-4 pb-4">{{ post.subtitle }}</h3>
+    <p>{{ post.content }}</p>
+</div>
+{% endblock %}
+{% block content-right %}
+fffff
+{% endblock %}
