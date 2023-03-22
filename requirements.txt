@@ -11,6 +11,7 @@ factory-boy==3.2.1
 Faker==17.6.0
 inflection==0.5.1
 iniconfig==2.0.0
+Markdown==3.4.1
 mypy-extensions==1.0.0
 packaging==23.0
 pathspec==0.11.1
