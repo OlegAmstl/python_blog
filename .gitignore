@@ -1,6 +1,6 @@
 venv/
 htmlcov/
-migrations/
+blog/migrations/
 .idea/
 .vscode/
 .pytest_cache/
