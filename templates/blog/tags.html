@@ -1,0 +1,18 @@
+{% extends 'blog/3-col-template.html' %}
+
+{% block content-left %}
+{% include '../includes/secondary-navbar.html' %}
+{% endblock %}
+
+{% block content-mid %}
+{% for post in posts %}
+<div>
+    {{ post.title }}
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block content-right %}
+    {% sidebar_tag_cloud %}
+
+{% endblock %}

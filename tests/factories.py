@@ -21,7 +21,7 @@ class PostFactory(factory.django.DjangoModelFactory):
 
     title = 'x'
     subtitle = 'x'
-    slug = 'x'
+    slug = 'x_x'
     author = factory.SubFactory(UserFactory)
     content = 'x'
     status = 'published'

@@ -34,9 +34,9 @@ class PostFactory(factory.django.DjangoModelFactory):
             self.tags.add(extracted)
         else:
             self.tags.add(
-                'Python',
-                'OSINT',
-                'Django',
-                'Home',
-                'Back-end'
+                'python',
+                'osint',
+                'django',
+                'home',
+                'back-end'
             )
