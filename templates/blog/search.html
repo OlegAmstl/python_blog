@@ -1,1 +1,25 @@
-test
+{% extends 'blog/3-col-template.html' %}
+
+{% block content-left %}
+{% include '../includes/secondary-navbar.html' %}
+{% endblock %}
+
+{% block content-mid %}
+<div class="center mx-auto" style="max-width: 683px;">
+    <h1 class="fs-1 fw-bold pb-5">
+        {% if posts %}
+        <span class="text-muted">Результат по </span>{{ request.GET.q }}
+        {% else %}
+        <span>Статьи по данному запросу не найдены.</span>
+        {% endif %}
+    </h1>
+
+
+    {% include 'blog/components/post-list-element-search.html' %}
+</div>
+{% endblock %}
+
+{% block content-right %}
+    {% sidebar_tag_cloud %}
+
+{% endblock %}
