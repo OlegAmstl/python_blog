@@ -41,7 +41,11 @@
                             <h1 class="mb-1 fs-6 p-0 text-dark fw-bold">{{ post.title|truncatechars:80 }}</h1>
                         </div>
                         <div class="col-3">
-                            <img src="https://picsum.photos/205/115" class="img-fluid float-end" alt="">
+                            {% if post.cover %}
+                            <img src="{{ post.cover.url }}" class="img-fluid float-end" style="width: 205px; height: 115px;" alt="image">
+                            {% else %}
+                            <img src="https://picsum.photos/205/115" class="img-fluid float-end" alt="image">
+                            {% endif %}
                         </div>
                     </div>
                 </div>

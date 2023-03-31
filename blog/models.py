@@ -31,6 +31,12 @@ class Post(models.Model):
         max_length=10, choices=options, default='draft')
 
     tags = TaggableManager()
+    cover = models.ImageField(
+        verbose_name="Обложка",
+        help_text='Добавьте обложку',
+        upload_to="covers/",
+        blank=True
+    )
 
     def get_absolute_url(self):
         return reverse('blog:post_single', args=[self.slug])
