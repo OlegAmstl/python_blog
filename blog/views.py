@@ -1,6 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView
-from django.shortcuts import get_object_or_404
 
 from .forms import PostSearchForm
 from .models import Post

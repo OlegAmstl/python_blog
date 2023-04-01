@@ -1,8 +1,8 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
 from django.urls import reverse
-from taggit.managers import TaggableManager
 from django_ckeditor_5.fields import CKEditor5Field
+from taggit.managers import TaggableManager
 
 
 class Post(models.Model):
