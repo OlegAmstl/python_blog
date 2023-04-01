@@ -2,6 +2,9 @@ from django import forms
 
 
 class PostSearchForm(forms.Form):
+    """
+    Строка поиска постов.
+    """
     q = forms.CharField()
 
     def __int__(self, *args, **kwargs):

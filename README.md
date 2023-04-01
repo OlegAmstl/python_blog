@@ -1,7 +1,16 @@
-# python_blog
+# Python_blog
+Приложение личного блога. Написание постов осуществляется в панели администратора. Для редактирования контента используется редактор CKEditor-5. Так же блог оснащен строкой поиска по постам и облаком тегов.
 
-## Как пользоваться генератором постов для заполнения БД
-1. python3 manage.py shell
-2. from blog.factory import PostFactory
-3. x = PostFactory.create_batch(100)
-4. exit()
+## Технологии.
+1. Python 3.10
+2. Django 4.1.7
+3. Bootstrap 5.1
+4. HTML5
+5. HTMX
+6. CSS
+
+### Как пользоваться генератором постов для заполнения БД
+1. ```python3 manage.py shell```
+2. ```from blog.factory import PostFactory```
+3. ```x = PostFactory.create_batch(100)```
+4. ```exit()```

@@ -16,18 +16,26 @@ class Post(models.Model):
     )
 
     title = models.CharField(
-        max_length=250)
+        max_length=250,
+        verbose_name='Заголовок поста')
     subtitle = models.CharField(
-        max_length=100)
+        max_length=100,
+        verbose_name='Подзаголовок поста')
     slug = models.SlugField(
         max_length=250, unique=True)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='post_author')
-    content = CKEditor5Field('Text', config_name='extends')
+        User, on_delete=models.CASCADE,
+        related_name='post_author',
+        verbose_name='Автор поста')
+    content = CKEditor5Field('Text', config_name='extends',
+                             verbose_name='Содержание поста')
     created_at = models.DateTimeField(
-        auto_now_add=True, editable=False)
+        auto_now_add=True,
+        editable=False,
+        verbose_name='Дата создания поста')
     updated_at = models.DateTimeField(
-        auto_now=True)
+        auto_now=True,
+        verbose_name='Дата обновления поста')
     status = models.CharField(
         max_length=10, choices=options, default='draft')
 

@@ -25,6 +25,9 @@ class HomeView(ListView):
 
 
 def post_single(request, post_slug):
+    """
+    Отображение поста.
+    """
     post = get_object_or_404(Post, slug=post_slug, status='published')
     related = Post.objects.filter(author=post.author)[:5]
     return render(request,
@@ -36,6 +39,9 @@ def post_single(request, post_slug):
 
 
 class TagListView(ListView):
+    """
+    Отображение постов по тегу.
+    """
     model = Post
     context_object_name = 'posts'
     paginate_by = 10
@@ -55,6 +61,9 @@ class TagListView(ListView):
 
 
 class PostSearchView(ListView):
+    """
+    Отображение постов из результата поиска.
+    """
     model = Post
     paginate_by = 10
     context_object_name = 'posts'

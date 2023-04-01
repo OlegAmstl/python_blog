@@ -9,6 +9,9 @@ FAKE = faker.Faker()
 
 
 class PostFactory(factory.django.DjangoModelFactory):
+    """
+    Генератор постов для заполнения контента.
+    """
     class Meta:
         model = Post
 
