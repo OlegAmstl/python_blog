@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from taggit.managers import TaggableManager
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class Post(models.Model):
@@ -22,7 +23,7 @@ class Post(models.Model):
         max_length=250, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='post_author')
-    content = models.TextField()
+    content = CKEditor5Field('Text', config_name='extends')
     created_at = models.DateTimeField(
         auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(
