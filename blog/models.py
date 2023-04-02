@@ -27,8 +27,7 @@ class Post(models.Model):
         User, on_delete=models.CASCADE,
         related_name='post_author',
         verbose_name='Автор поста')
-    content = CKEditor5Field('Text', config_name='extends',
-                             verbose_name='Содержание поста')
+    content = CKEditor5Field('Text', config_name='extends')
     created_at = models.DateTimeField(
         auto_now_add=True,
         editable=False,
