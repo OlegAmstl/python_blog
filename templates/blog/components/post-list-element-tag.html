@@ -10,7 +10,7 @@
                 <div class="card-body p-0">
                     <div class="pb-2 text-body infscroll-author">{{ post.author }}</div>
                     <h3 class="mb-1 text-body fw-bold infscroll-title">{{ post.title|truncatechars:80 }}</h3>
-                    <p class="text-muted fs-6 d-none d-sm-block">{{ post.content|truncatechars:180 }}</p>
+                    <p class="text-muted fs-6 d-none d-sm-block">{{ post.content|safe|truncatechars:180 }}</p>
                     <div class="text-muted infscroll-date">{{ post.updated_at|date:"d M Y" }}</div>
                 </div>
             </div>

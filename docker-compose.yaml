@@ -1,0 +1,28 @@
+# версия docker-compose
+version: '3.8'
+
+# имена и описания контейнеров, которые должны быть развёрнуты
+services:
+  # описание контейнера db
+  database:
+    image: postgres:14.6-alpine
+    volumes:
+      - /var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=blog
+      - POSTGRES_USER=drofa
+      - POSTGRES_PASSWORD=doradora
+  web:
+    build: .
+    restart: always
+    ports:
+     - "8000:8000"
+    depends_on:
+      - database
+    environment:
+      - DB_HOST=database
+      - DB_NAME=blog
+      - DB_USER=drofa
+      - DB_PASS=doradora
+    command: >
+      sh -c "python3 manage.py runserver 0.0.0.0:8000"
