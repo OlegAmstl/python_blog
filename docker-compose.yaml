@@ -1,9 +1,7 @@
-# версия docker-compose
 version: '3.8'
 
-# имена и описания контейнеров, которые должны быть развёрнуты
 services:
-  # описание контейнера db
+
   database:
     image: postgres:14.6-alpine
     volumes:
@@ -15,8 +13,9 @@ services:
   web:
     build: .
     restart: always
-    ports:
-     - "8000:8000"
+    volumes:
+      - static_value:/app/static/
+      - media_value:/app/media/
     depends_on:
       - database
     environment:
@@ -26,3 +25,17 @@ services:
       - DB_PASS=doradora
     command: >
       sh -c "python3 manage.py runserver 0.0.0.0:8000"
+  nginx:
+    image: nginx:1.21.3-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - static_value:/var/html/static/
+      - media_value:/var/html/media/
+    depends_on:
+      - web
+
+volumes:
+  static_value:
+  media_value:
