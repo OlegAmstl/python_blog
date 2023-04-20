@@ -11,7 +11,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = os.environ.get('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'), 'localhost']
 
 
 INSTALLED_APPS = [
@@ -194,4 +194,4 @@ CKEDITOR_5_CONFIGS = {
     }
 }
 
-CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0']
+CSRF_TRUSTED_ORIGINS = ['http://188.68.223.102']
