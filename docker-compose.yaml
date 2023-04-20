@@ -6,10 +6,8 @@ services:
     image: postgres:14.6-alpine
     volumes:
       - /var/lib/postgresql/data/
-    environment:
-      - POSTGRES_DB=blog
-      - POSTGRES_USER=drofa
-      - POSTGRES_PASSWORD=doradora
+    env_file:
+      - .env
   web:
     build: .
     restart: always
@@ -18,11 +16,8 @@ services:
       - media_value:/app/media/
     depends_on:
       - database
-    environment:
-      - DB_HOST=database
-      - DB_NAME=blog
-      - DB_USER=drofa
-      - DB_PASS=doradora
+    env_file:
+      - .env
     command: >
       sh -c "python3 manage.py runserver 0.0.0.0:8000"
   nginx:
