@@ -22,6 +22,9 @@ class HomeView(ListView):
             return 'blog/components/post-list-element.html'
         return 'blog/index.html'
 
+    def get_queryset(self):
+        return Post.objects.filter(status='published')
+
 
 def post_single(request, post_slug):
     """
@@ -63,7 +66,7 @@ class PostSearchView(ListView):
     """
     Отображение постов из результата поиска.
     """
-    model = Post
+    model = Post    
     paginate_by = 10
     context_object_name = 'posts'
     form_class = PostSearchForm

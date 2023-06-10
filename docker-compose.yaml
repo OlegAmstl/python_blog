@@ -19,7 +19,7 @@ services:
     env_file:
       - .env
     command: >
-      sh -c "python3 manage.py runserver 0.0.0.0:8000"
+      sh -c "python3 manage.py runserver 188.68.223.102:8000"
   nginx:
     image: nginx:1.21.3-alpine
     ports:
